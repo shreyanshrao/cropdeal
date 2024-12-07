@@ -1,0 +1,194 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #f0f4ff, #e8faff);
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    background: linear-gradient(45deg, #5b86e5, #36d1dc);
+    padding: 20px;
+    text-align: center;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-content img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/* Section Styling */
+section {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: scale(1.02);
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #5b86e5;
+}
+
+/* Crop Listings */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filters label,
+.filters input,
+.filters select {
+    font-size: 0.9rem;
+}
+
+.filters button {
+    background-color: #5b86e5;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.filters button:hover {
+    background-color: #4a78cf;
+}
+
+.listing {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.listing-item {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.listing-item:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact-btn {
+    background-color: #7f53ac;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: #654ea3;
+}
+
+/* Chat Box */
+#chat-box {
+    height: 150px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow-y: scroll;
+    padding: 10px;
+    background: #f4f4f4;
+}
+
+.chat-message {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.chat-input {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.chat-input button {
+    background-color: #5b86e5;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.chat-input button:hover {
+    background-color: #4a78cf;
+}
+
+/* Order History */
+#order-history ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#order-history li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #e8f7ff;
+    border-left: 4px solid #36d1dc;
+    border-radius: 5px;
+}
+
+/* Profile Section */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form input,
+form button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #5b86e5;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #4a78cf;
+}

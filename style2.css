@@ -1,0 +1,172 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    background-color: #02020a; /* Rich deep purple for a modern, sleek look */
+    color: #f4f4f9; /* Off-white for easy readability */
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    background-color: #9afca2; /* Vibrant purple-blue for attention */
+    padding: 15px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white; /* Stand out against the vibrant header */
+    font-weight: 900;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff8c42; /* Highlight with a warm accent color */
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #e86eab, #6a8dff); /* Gradient with soft purple and blue tones */
+    color: white;
+    font-family: "Edu AU VIC WA NT Arrows", cursive;
+    font-optical-sizing: auto;
+    font-weight: 700;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Images Section */
+.images-section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 30px 20px;
+}
+
+.image-container {
+    text-align: center;
+    margin: 20px;
+}
+
+.image-container img {
+    width: 350px;
+    height: 350px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.image-container p {
+    margin-top: 15px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #ff8c42; /* Warm accent to complement the design */
+}
+
+/* Info Section */
+.info-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.info-section h2 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #6c63ff; /* Matches the header */
+    text-transform: uppercase;
+}
+
+.info-section p {
+    font-family: "Edu AU VIC WA NT Arrows", cursive;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    color: #f4f4f9;
+}
+
+/* Work Images Section */
+.work-images {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    gap: 15px;
+}
+
+.work-images img {
+    width: 200px;
+    height: 200px;
+    border: 3px solid white;
+    border-radius: 8px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.work-images img:hover {
+    transform: scale(1.1);
+    border-color: #ff8c42; /* Highlight hover with the accent color */
+}
+
+/* Contact Section */
+#contact img {
+    width: 50px;
+    height: 50px;
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+}
+
+#contact img:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .images-section,
+    .work-images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-container img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .work-images img {
+        width: 150px;
+        height: 150px;
+    }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dealer's Dashboard</title>
+    <link rel="stylesheet" href="style4.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <img src="https://i.pinimg.com/564x/cc/b4/3d/ccb43d88f362d1ab22f3ade7004e514f.jpg" alt="Dealer Logo">
+            <h1>Dealer's Dashboard</h1>
+        </div>
+    </header>
+
+    <main>
+        <!-- Crop Listings Section -->
+        <section id="crop-listings">
+            <h2>Crop Listings</h2>
+            <div class="filters">
+                <label for="filter-crop">Crop Type:</label>
+                <select id="filter-crop">
+                    <option value="All">All</option>
+                    <option value="Wheat">Wheat</option>
+                    <option value="Rice">Rice</option>
+                    <option value="Vegetables">Vegetables</option>
+                </select>
+                <label for="filter-location">Location:</label>
+                <input type="text" id="filter-location" placeholder="Enter location">
+                <label for="filter-price">Price Range:</label>
+                <input type="number" id="filter-price-min" placeholder="Min">
+                <input type="number" id="filter-price-max" placeholder="Max">
+                <button id="apply-filters">Apply Filters</button>
+            </div>
+
+            <div class="listing">
+                <div class="listing-item">
+                    <h3>Rice</h3>
+                    <p>Quantity: 500 kg</p>
+                    <p>Location: Village A</p>
+                    <p>Price: $10/kg</p>
+                    <button class="contact-btn">Contact Farmer</button>
+                </div>
+                <div class="listing-item">
+                    <h3>Wheat</h3>
+                    <p>Quantity: 300 kg</p>
+                    <p>Location: Village B</p>
+                    <p>Price: $8/kg</p>
+                    <button class="contact-btn">Contact Farmer</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Negotiation Section -->
+        <section id="negotiation">
+            <h2>Negotiation</h2>
+            <div id="chat-box">
+                <div class="chat-message">
+                    <span class="farmer">Farmer:</span> I'm open to negotiations.
+                </div>
+            </div>
+            <div id="chat-input">
+                <input type="text" placeholder="Type your message...">
+                <button id="send-message">Send</button>
+            </div>
+        </section>
+
+        <!-- Order History -->
+        <section id="order-history">
+            <h2>Order History</h2>
+            <ul>
+                <li>Crop: Rice | Quantity: 500kg | Total: $5000 | Status: Paid</li>
+                <li>Crop: Wheat | Quantity: 300kg | Total: $2400 | Status: Pending</li>
+            </ul>
+        </section>
+
+        <!-- Profile -->
+        <section id="profile">
+            <h2>Profile</h2>
+            <form>
+                <label for="dealer-name">Name:</label>
+                <input type="text" id="dealer-name" placeholder="Enter your name">
+                <label for="payment-details">Payment Details:</label>
+                <input type="text" id="payment-details" placeholder="Enter bank/payment info">
+                <button type="button">Update Profile</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="dealers-dashboard.js"></script>
+</body>
+
+</html>

@@ -1,82 +1,299 @@
-/* General Styling */
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f4f6f9;
-    margin: 0;
-    color: #333;
+/* Vibrant Farmer's Dashboard CSS */
+:root {
+    --primary: #2ecc71; /* Fresh green */
+    --secondary: #f39c12; /* Warm orange */
+    --accent: #3498db; /* Trusting blue */
+    --dark: #2c3e50; /* Deep navy */
+    --light: #ecf0f1; /* Light grayish */
+    --highlight: #e74c3c; /* Alert red */
+    --soil: #8B4513; /* Earth brown */
+    --sunflower: #FFC312; /* Bright yellow */
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #28b7f5 0%, #426d8a 100%);
+    margin: 0;
+    color: var(--dark);
+    min-height: 100vh;
+}
+
+/* Header with Farm Background */
 header {
-    background-color: #4caf50;
-    padding: 15px 20px;
-    color: white;
+    background: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+    padding: 30px 20px;
+    color: rgb(48, 145, 58);
     text-align: center;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(46, 204, 113, 0.7);
+    z-index: 1;
 }
 
 .header-content {
+    position: relative;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
+    animation: fadeInDown 1s ease;
 }
 
 .header-content img {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border: 3px solid rgb(247, 62, 203);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.header-content img:hover {
+    transform: rotate(10deg) scale(1.1);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
 }
 
 header h1 {
     margin: 0;
-    font-size: 1.8rem;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-weight: 700;
 }
 
+/* Main Content Grid */
 main {
-    padding: 20px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
+/* Vibrant Section Cards */
 section {
-    margin-bottom: 30px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: rgba(239, 107, 107, 0.9);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    border-top: 5px solid var(--primary);
+    animation: fadeInUp 0.8s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
 }
 
 h2 {
-    margin-bottom: 15px;
-    color: #4caf50;
-   padding: 10px;
+    color: var(--primary);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    position: relative;
+    padding-bottom: 10px;
 }
 
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--secondary);
+}
+
+/* Form Elements */
 form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
 label {
-    font-weight: bold;
+    font-weight: 600;
+    color: var(--dark);
+    font-size: 1rem;
 }
 
-input,
-select,
-button {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+input, select {
+    padding: 12px 15px;
+    border: 2px solid #d7f131;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    background-color: rgba(61, 243, 188, 0.8);
+}
+
+input:focus, select:focus {
+    border-color: var(--accent);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
 }
 
 button {
-    background-color: #4caf50;
-    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    color: rgb(71, 94, 188);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 button:hover {
-    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    background: linear-gradient(to right, var(--secondary), var(--primary));
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Active Listings Table */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+th {
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    color: rgb(41, 40, 40);
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    transition: background 0.2s;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background: rgba(46, 204, 113, 0.1);
+}
+
+/* Chat Section */
+#chat-box {
+    background: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60') center/cover;
+    background-blend-mode: overlay;
+    background-color: rgba(50, 104, 117, 0.8);
+    height: 200px;
+    border-radius: 10px;
+    padding: 15px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    border: 2px solid var(--accent);
+}
+
+.chat-message {
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 18px;
+    max-width: 80%;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+    background-color: rgb(44, 214, 169);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.dealer {
+    color: var(--highlight);
+    font-weight: 600;
+}
+
+#chat-input {
+    display: flex;
+    gap: 10px;
+}
+
+#chat-input input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid var(--primary);
+}
+
+/* Payment Status */
+#payment-status ul {
+    list-style: none;
+    padding: 0;
+}
+
+#payment-status li {
+    padding: 12px;
+    margin-bottom: 10px;
+    background: rgba(230, 115, 115, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: all 0.3s;
+    position: relative;
+    padding-left: 50px;
+}
+
+#payment-status li::before {
+    content: '💰';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+}
+
+#payment-status li:hover {
+    transform: translateX(5px);
+    background: white;
+}
+
+/* Profile Section */
+#profile {
+    background: url('https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60') center/cover;
+    background-blend-mode: overlay;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Responsive Design */
@@ -84,37 +301,38 @@ button:hover {
     .header-content {
         flex-direction: column;
     }
-
-    .header-content img {
-        width: 60px;
-        height: 60px;
+    
+    main {
+        grid-template-columns: 1fr;
+    }
+    
+    header h1 {
+        font-size: 2rem;
     }
 }
-#chat-box {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 10px;
-    height: 200px;
-    overflow-y: auto;
-    border-radius: 5px;
-    margin-bottom: 10px;
+
+/* Decorative Elements */
+.crop-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    vertical-align: middle;
 }
 
-.chat-message {
-    margin-bottom: 10px;
+.status-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
-.dealer {
-    color: #4caf50;
-    font-weight: bold;
+.status-pending {
+    background-color: var(--secondary);
+    color: rgb(15, 14, 14);
 }
-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-}
-table th,
-table td {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+
+.status-completed {
+    background-color: var(--primary);
+    color: rgb(14, 13, 13);
 }
